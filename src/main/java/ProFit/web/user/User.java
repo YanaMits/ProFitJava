@@ -16,7 +16,7 @@ public class User {
         private String name;
 
         @Column (length = 15)
-        private int password;
+        private String password;
 
         @Column (length = 15)
         private String phone;
@@ -45,11 +45,11 @@ public class User {
                 this.name = name;
         }
 
-        public int getPassword() {
+        public String getPassword() {
                 return password;
         }
 
-        public void setPassword(int password) {
+        public void setPassword(String password) {
                 this.password = password;
         }
 
