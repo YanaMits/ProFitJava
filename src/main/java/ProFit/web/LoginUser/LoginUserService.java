@@ -1,6 +1,7 @@
 package ProFit.web.LoginUser;
 
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -24,7 +25,7 @@ public class LoginUserService implements UserDetailsService {
 
     public String signUpUser(LoginUser loginUser) {
         boolean userExists = loginUserRepository.findByEmail(loginUser.getEmail()).isPresent();
-        if(!userExists) {
+        if(userExists) {
             throw new IllegalStateException("Email already exists.");
         }
         String encodedPassword = bCryptPasswordEncoder.encode(loginUser.getPassword());

@@ -3,11 +3,14 @@ package ProFit.web.Registration;
 import ProFit.web.LoginUser.LoginUser;
 import ProFit.web.LoginUser.LoginUserService;
 import ProFit.web.LoginUser.UserRole;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class RegistrationService {
+    @Autowired
     private EmailValidator emailValidator;
+    @Autowired
     private LoginUserService loginUserService;
 
     public String register(RegistrationRequest request) {
@@ -22,7 +25,7 @@ public class RegistrationService {
                         request.getEmail(),
                         UserRole.USER
                 )
-        )
+        );
 
     }
 }
