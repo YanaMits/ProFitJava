@@ -1,7 +1,6 @@
 package ProFit.web.Registration;
 
 import ProFit.web.LoginUser.LoginUser;
-import ProFit.web.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

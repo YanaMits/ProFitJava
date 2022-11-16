@@ -5,19 +5,20 @@
     <title>[[${title}]]</title>
 </head>
     <body>
-        <form method="post" th:action="@{/users/save}" th:object="${user}">
+    <h1>[[${title}]]</h1>
+        <form method="post" th:action="@{/workouts/save}" th:object="${workout}">
             <input type="hidden" th:field="*{id}"/>
             <div>
                 <label>Name</label>
                 <input th:field="*{name}" maxlength="45" minlength="2" required  type="text"/>
             </div>
             <div>
-                <label>Email</label>
-                <input th:field="*{email}" maxlength="45" minlength="2" required  type="text"/>
+                <label>Date</label>
+                <input th:field="*{date}" maxlength="45" minlength="2" required  type="text"/>
             </div>
             <div>
-                <label>Password</label>
-                <input th:field="*{password}" type="text"/>
+                <label>Trainer</label>
+                <input th:field="*{trainer}" type="text"/>
             </div>
             <div>
                 <button type="submit">Save</button>
@@ -25,7 +26,7 @@
             </div>
             <script type="text/javascript">
                 function cancelForm() {
-                    window.location = "[[@{/users}]]";
+                    window.location = "[[@{/workouts}]]";
                 }
             </script>
         </form>

@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <title>This is a main page</title>
 </head>
-    <body>
-    <p>Hello World!</p>
-    <p th:utext="${user}"></p>
-    <a href="/users">Check users</a>
-    </body>
+<body>
+<p>[[${user}]], welcome to ProFit!</p>
+
+<ul>
+    <li>
+        <a href="/workouts">Check workouts</a>
+    </li>
+    <li>
+        <a href="/registration">Registration</a>
+    </li>
+
+</ul>
+</body>
 </html>
