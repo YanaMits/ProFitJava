@@ -6,7 +6,7 @@
 </head>
     <body>
     <h1>[[${title}]]</h1>
-        <form method="post" th:action="@{/workouts/save}" th:object="${workout}">
+        <form method="post" th:action="@{/workouts/save}" th:object="${workoutRequest}">
             <input type="hidden" th:field="*{id}"/>
             <div>
                 <label>Name</label>

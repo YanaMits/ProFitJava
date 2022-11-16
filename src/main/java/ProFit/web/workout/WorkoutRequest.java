@@ -6,12 +6,14 @@ import net.bytebuddy.implementation.bind.annotation.Empty;
 import java.util.Date;
 
 @Getter
+@Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
 public class WorkoutRequest {
-    private final Integer id =0;
-    private final String name = "";
-    private final Date date = new Date();
-    private final String trainer = "";
+    private Integer id;
+    private String name;
+    private Date date;
+    private String trainer;
 }

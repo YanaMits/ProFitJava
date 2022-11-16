@@ -24,7 +24,7 @@ public class WorkoutService {
             throw new IllegalStateException("No trainer found with name:" + workoutRequest.getTrainer());
         }
 
-        Workout workout = workoutRequest.getId() == 0
+        Workout workout = workoutRequest.getId() == null
                 ? new Workout()
                 : workoutRepository.findById(workoutRequest.getId()).get();
         workout.setName(workoutRequest.getName());

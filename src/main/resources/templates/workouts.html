@@ -17,7 +17,7 @@
         <thead>
         <th>Id</th>
         <th>Name</th>
-        <th>Password</th>
+        <th>Trainer</th>
         <th>Action</th>
         </thead>
         <tbody>
@@ -25,7 +25,7 @@
             <tr>
                 <td>[[${workout.id}]]</td>
                 <td>[[${workout.name}]]</td>
-                <td>[[${workout.password}]]</td>
+                <td>[[${workout.trainer.username}]]</td>
                 <td>
                     <a th:href="@{'workouts/edit/' + ${workout.id}}">Edit</a>
                     <a th:href="@{'workouts/delete/' + ${workout.id}}">Delete</a>

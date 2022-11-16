@@ -25,14 +25,14 @@ public class WorkoutController {
 
     @GetMapping("/workouts/new")
     public String showNewWorkoutForm(Model model) {
-        model.addAttribute("workout", new WorkoutRequest());
+        model.addAttribute("workoutRequest", new WorkoutRequest());
         model.addAttribute("title", "Add New Workout");
         return "workout-form";
     }
 
     @PostMapping("/workouts/save")
-    public String saveWorkout(WorkoutRequest workout, RedirectAttributes redirectAttributes) {
-        workoutService.save(workout);
+    public String saveWorkout(WorkoutRequest workoutRequest, RedirectAttributes redirectAttributes) {
+        workoutService.save(workoutRequest);
         redirectAttributes.addFlashAttribute("message", "Workout Saved");
         return "redirect:/workouts";
     }
@@ -41,7 +41,7 @@ public class WorkoutController {
     public String showEditForm(@PathVariable("id") Integer id, Model model, RedirectAttributes redirectAttributes) {
         try {
             Workout workout = workoutService.getWorkoutById(id);
-            model.addAttribute("Workout", workout);
+            model.addAttribute("workoutRequest", new WorkoutRequest(workout.getId(),workout.getName(),workout.getDate(), workout.getTrainer().getUsername()));
             model.addAttribute("title", "Edit Workout");
             return "workout-form";
         } catch (WorkoutNotFoundException e) {
